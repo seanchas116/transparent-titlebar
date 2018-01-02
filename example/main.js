@@ -1,4 +1,5 @@
 const {app, BrowserWindow, ipcMain} = require('electron');
+const transparentTitlebar = require('../')
 
 let win;
 
@@ -10,6 +11,7 @@ function createWindow() {
   win.on('closed', () => {
     win = null;
   });
+  transparentTitlebar.setup(win.getNativeWindowHandle())
 }
 
 app.on('ready', createWindow);
