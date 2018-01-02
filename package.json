@@ -20,7 +20,6 @@
     "example": "example"
   },
   "devDependencies": {
-    "@types/electron": "^1.6.10",
     "@types/node": "^8.5.2"
   },
   "repository": {
