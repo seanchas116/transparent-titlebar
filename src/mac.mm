@@ -33,7 +33,7 @@ static NSWindow *windowFromBuffer(const v8::Local<v8::Value>& buffer) {
   return view.window;
 }
 
-void setTitleBarTransparent(const Nan::FunctionCallbackInfo<v8::Value>& info) {
+void setup(const Nan::FunctionCallbackInfo<v8::Value>& info) {
   if (info.Length() < 1) {
     Nan::ThrowTypeError("Wrong number of arguments");
     return;
