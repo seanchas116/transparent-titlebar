@@ -1,5 +1,11 @@
 # transparent-titlebar
+
 Setup transparent titlebar with titles for Electron window in Mac
+
+
+|Using transparent-titlebar|titleBarStyle: hidden in Electron|Normal|
+|-|-|-|
+| ![Using transparent-titlebar](images/transparent.png) | ![titleBarStyle: hidden](images/titlebarstyle-hidden.png) | ![Normal](images/normal.png) |
 
 ## Install
 
