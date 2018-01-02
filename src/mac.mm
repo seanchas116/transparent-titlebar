@@ -34,12 +34,31 @@ static NSWindow *windowFromBuffer(const v8::Local<v8::Value>& buffer) {
 }
 
 void setTitleBarTransparent(const Nan::FunctionCallbackInfo<v8::Value>& info) {
+  if (info.Length() < 1) {
+    Nan::ThrowTypeError("Wrong number of arguments");
+    return;
+  }
+  if (!node::Buffer::HasInstance(info[0]) || node::Buffer::Length(info[0]) < 4) {
+    Nan::ThrowTypeError("Pointer buffer is invalid");
+    return;
+  }
   auto win = windowFromBuffer(info[0]);
   win.titlebarAppearsTransparent = true;
   win.styleMask |= NSFullSizeContentViewWindowMask;
 }
 
 void setTitleColor(const Nan::FunctionCallbackInfo<v8::Value>& info) {
+  if (info.Length() < 5) {
+    Nan::ThrowTypeError("Wrong number of arguments");
+    return;
+  }
+  if (!node::Buffer::HasInstance(info[0]) || node::Buffer::Length(info[0]) < 4) {
+    Nan::ThrowTypeError("Pointer buffer is invalid");
+    return;
+  }
+  if (!info[1]->IsNumber() || !info[2]->IsNumber() || !info[3]->IsNumber() || !info[4]->IsNumber()) {
+    Nan::ThrowTypeError("Color values must be number");
+  }
   auto win = windowFromBuffer(info[0]);
   double r = info[1]->NumberValue();
   double g = info[2]->NumberValue();
