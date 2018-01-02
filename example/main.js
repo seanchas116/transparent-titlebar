@@ -1,5 +1,5 @@
 const {app, BrowserWindow, ipcMain} = require('electron');
-const transparentTitlebar = require('../')
+const transparentTitlebar = require('transparent-titlebar')
 
 let win;
 

@@ -1,7 +1,7 @@
 const path = require('path')
 const Color = require('color')
 const {remote} = require('electron')
-const transparentTitlebar = remote.require('../')
+const transparentTitlebar = remote.require('transparent-titlebar')
 
 const setTitleButton = document.getElementById('setTitle')
 const titleInput = document.getElementById('title')
