@@ -8,12 +8,6 @@
       ],
       "conditions": [
         ['OS=="mac"', {
-          'xcode_settings': {
-            'OTHER_CFLAGS': [
-              '-std=c++11',
-              '-stdlib=libc++'
-            ]
-          },
           "sources": [ "src/mac.mm" ]
         }],
         ['OS!="mac"', {
