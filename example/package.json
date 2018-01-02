@@ -13,5 +13,8 @@
   "devDependencies": {
     "electron": "^1.7.10",
     "electron-rebuild": "^1.6.0"
+  },
+  "dependencies": {
+    "color": "^2.0.1"
   }
 }
