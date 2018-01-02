@@ -27,3 +27,11 @@ transparentTitlebar.setup(win.getNativeWindowHandle())
 // Set title color (must be called whenever the title has changed)
 transparentTitlebar.setColor(win.getNativeWindowHandle(), 1, 0, 0, 1)
 ```
+
+## Run Example
+
+```
+cd examples
+npm install
+npm start
+```
