@@ -17,6 +17,6 @@
   },
   "dependencies": {
     "color": "^2.0.1",
-    "transparent-titlebar": ".."
+    "transparent-titlebar": "file:.."
   }
 }

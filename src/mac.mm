@@ -44,7 +44,7 @@ void setup(const Nan::FunctionCallbackInfo<v8::Value>& info) {
   }
   auto win = windowFromBuffer(info[0]);
   win.titlebarAppearsTransparent = true;
-  win.styleMask |= NSFullSizeContentViewWindowMask;
+  win.styleMask |= NSWindowStyleMaskFullSizeContentView;
 }
 
 void setTitleColor(const Nan::FunctionCallbackInfo<v8::Value>& info) {
