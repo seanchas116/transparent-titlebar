@@ -1,7 +1,8 @@
-#include <nan.h>
+#include <napi.h>
 
-void setup(const Nan::FunctionCallbackInfo<v8::Value>& info) {
+Napi::Value setup(const Napi::CallbackInfo& info) {
+    return {};
 }
-
-void setTitleColor(const Nan::FunctionCallbackInfo<v8::Value>& info) {
+Napi::Value setTitleColor(const Napi::CallbackInfo& info) {
+    return {};
 }

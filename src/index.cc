@@ -1,13 +1,12 @@
-#include <nan.h>
+#include <napi.h>
 
-void setup(const Nan::FunctionCallbackInfo<v8::Value>& info);
-void setTitleColor(const Nan::FunctionCallbackInfo<v8::Value>& info);
+Napi::Value setup(const Napi::CallbackInfo& info);
+Napi::Value setTitleColor(const Napi::CallbackInfo& info);
 
-static void InitModule(v8::Local<v8::Object> exports) {
-  exports->Set(Nan::New("setup").ToLocalChecked(),
-               Nan::New<v8::FunctionTemplate>(setup)->GetFunction());
-  exports->Set(Nan::New("setTitleColor").ToLocalChecked(),
-               Nan::New<v8::FunctionTemplate>(setTitleColor)->GetFunction());
+Napi::Object Init(Napi::Env env, Napi::Object exports) {
+  exports.Set(Napi::String::New(env, "setup"), Napi::Function::New(env, setup));
+  exports.Set(Napi::String::New(env, "setTitleColor"), Napi::Function::New(env, setTitleColor));
+  return exports;
 }
 
-NODE_MODULE(transparent_titlebar, InitModule)
+NODE_API_MODULE(transparent_titlebar, Init)

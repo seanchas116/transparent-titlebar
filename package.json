@@ -11,7 +11,7 @@
     "node-addon-api": "^3.0.0"
   },
   "scripts": {
-    "rebuild": "node-gyp rebuild --target=1.7.10 --arch=x64 --dist-url=https://atom.io/download/atom-shell",
+    "rebuild": "node-gyp rebuild --target=9.2.0 --arch=x64 --dist-url=https://atom.io/download/atom-shell",
     "test": "node index.js",
     "install": "node-gyp rebuild",
     "example": "cd example && npm start"

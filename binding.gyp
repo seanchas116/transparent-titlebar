@@ -1,19 +1,22 @@
 {
-  "targets": [
-    {
-      "target_name": "addon",
-      "sources": [ "src/index.cc" ],
-      "include_dirs": [
-        "<!(node -e \"require('nan')\")",
-      ],
-      "conditions": [
-        ['OS=="mac"', {
-          "sources": [ "src/mac.mm" ]
-        }],
-        ['OS!="mac"', {
-          "sources": [ "src/default.cc" ]
-        }]
-      ]
-    }
-  ]
+    "targets": [
+        {
+            "target_name": "addon",
+            "cflags!": ["-fno-exceptions"],
+            "cflags_cc!": ["-fno-exceptions"],
+            "sources": ["src/index.cc"],
+            "include_dirs": [
+                "<!@(node -p \"require('node-addon-api').include\")"
+            ],
+            'defines': ['NAPI_DISABLE_CPP_EXCEPTIONS'],
+            "conditions": [
+                ['OS=="mac"', {
+                    "sources": ["src/mac.mm"]
+                }],
+                ['OS!="mac"', {
+                    "sources": ["src/default.cc"]
+                }]
+            ]
+        }
+    ]
 }
