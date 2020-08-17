@@ -25,7 +25,7 @@ const transparentTitlebar = require('transparent-titlebar')
 // Setup window to use transparent titlebar
 transparentTitlebar.setup(win.getNativeWindowHandle())
 
-// Set title color (must be called whenever the title has changed)
+// Set title color (must be called on page load and whenever the title has changed)
 transparentTitlebar.setColor(win.getNativeWindowHandle(), 1, 0, 0, 1)
 ```
 

@@ -12,6 +12,12 @@ const colorInput = document.getElementById("color");
 
 let color = [0, 0, 0, 1];
 
+// you need to set initial color on page load
+transparentTitlebar.setTitleColor(
+  remote.getCurrentWindow().getNativeWindowHandle(),
+  ...color
+);
+
 setTitleButton.addEventListener("click", () => {
   const title = titleInput.value;
   if (title) {
