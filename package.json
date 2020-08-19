@@ -19,6 +19,15 @@
   "directories": {
     "example": "example"
   },
+  "files": [
+    "src",
+    "binding.gyp",
+    "index.js",
+    "index.d.ts",
+    "LICENSE",
+    "package.json",
+    "README.md"
+  ],
   "devDependencies": {
     "@types/node": "^14.0.27"
   },
